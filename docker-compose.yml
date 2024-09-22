@@ -16,10 +16,12 @@ services:
       timeout: 5s
       retries: 3
       start_period: 10s
+    environment:
+      - SLEEP_INTERVAL=0
     volumes:
      - ./vote:/usr/local/app
     ports:
-      - "5000:80"
+      - "5002:80"
     networks:
       - front-tier
       - back-tier
